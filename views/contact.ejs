@@ -3,26 +3,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" type="text/css">
   <title>Contact Me</title>
 </head>
   <body>
+    <div>
       <% include header %>
-      <div>
-      <form action="/thanks" method="POST">
-        <label for="firstName">First Name:</label>
-        <input id="firstName" name="firstName" type="text" />
+      <div class="container">
+        <h1 class="mt-5">Contact Me</h1>
+        <p>Feel free to drop me a note through this form, or use any of my social media links to get in touch.</p>
+        <form action="/thanks" method="POST" class="mx-auto border border-white border-lg p-5">
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input id="firstName" name="firstName" type="text" class="form-control-sm" required />
+          </div>
 
-        <label for="lastName">Last Name:</label>
-        <input id="lastName" name="lastName" type="text" />
-        
-        <label for="email">Email:</label>
-        <input id="email" name="email" type="text" />
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message"></textarea>
-        
-        <input type="submit" value="Send Message" />
-      </form>
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input id="lastName" name="lastName" type="text"  class="form-control-sm" />
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="email"  class="form-control-sm" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required  class="form-control"></textarea>
+          </div>
+          
+          <input type="submit" class="float-right" value="Send Message" onclick="" />
+        </form>
+      </div>  
     </div>
+    <% include footer %>
   </body>
 </html>

@@ -1,0 +1,10 @@
+*.env
+node_modules
+gitignore
+lib-cov
+coverage
+.DS_Store
+logs
+*.log
+.vscode
+dist

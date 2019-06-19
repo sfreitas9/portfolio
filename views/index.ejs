@@ -3,12 +3,34 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="style.css" type="text/css">
       <title>Sherry's Portfolio Website</title>
     </head>
   <body>
     <% include header %>
-    <div>
-      I am <%= person.firstName %> <%= person.lastName %>
+    <div class="container-fluid p-5">
+      <h1>Welcome to my site</h1>
+      <h6>I am a hard-working web application developer and would love for you to:</h6>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-3 mx-5 mb-3">
+          <div class="card ">
+            <div class="card-header bg-secondary text-white">View My Portfolio</div>
+            <div class="card-body mx-auto"><a href="/portfolio" class="stretched-link"><i class="fas fa-book-open fa-7x"></i></a></div>
+          </div>
+        </div>
+        <div class="col-lg-3 mx-5">
+            <div class="card">
+              <div class="card-header bg-secondary text-white">Contact Me</div>
+              <div class="card-body mx-auto"><a href="/contact" class="stretched-link"><i class="fas fa-at fa-7x"></a></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2"></div>
     </div>
     <% include footer %>
   </body>

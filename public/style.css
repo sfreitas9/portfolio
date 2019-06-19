@@ -1,0 +1,54 @@
+body, .footer {
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(173,212,220,0.88) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(173,212,220,0.88)));
+  background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(173,212,220,0.88) 100%);
+  background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(173,212,220,0.88) 100%);
+  background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(173,212,220,0.88) 100%);
+  background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(173,212,220,0.88) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#add4dc', GradientType=1 );
+}
+
+/* Styling for the navigation menu */
+.navbar {
+  background: darkslategray;
+}
+
+.nav-item {
+  margin: 0 1em;
+}
+
+.nav-link, header div i {
+  color: white;
+}
+
+.nav-link:hover, .card a:hover {
+  color: lightgrey;
+}
+
+.card a {
+  color: lightseagreen;
+}
+
+/* Styling for the carousel */
+.carousel-inner > .item > img {
+  margin: 0 auto;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  filter: invert(100%);
+}
+
+.carousel-caption {
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    );
+    color: #fff; 
+    display: inline;
+    padding: 0.5rem;
+    
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}

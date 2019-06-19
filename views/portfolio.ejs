@@ -4,10 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" type="text/css">
   <title>Portfolio</title>
 </head>
 <body>
     <% include header %>
-  
+    <div class="container mb-1">
+      <h1 class="mt-5">Portfolio</h1>
+      <h6>Here are some of my recent projects. Feel free to launch each app by clicking on its image.</h6>
+      <div class="my-4">
+        <div id="projects" class="carousel slide" data-ride="carousel">
+
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <% projects.forEach((project, i) => { %>
+              <li data-target="#projects" data-slide-to="<%= i %>" class="<%= i===0 ? 'active' : '' %>"></li>
+            <% }) %>
+          </ul>
+        
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <% projects.forEach((project, i) => { %>
+              <div class="<%= i=== 0 ? 'carousel-item active' : 'carousel-item' %>" >
+                <div class="carousel-caption">
+                  <h3><%= project.goal %></h3>
+                </div>
+                <a target="_blank" rel="noopener" href=<%= project.url %> ><img  class="mx-auto d-block  border border-dark img-fluid" src=<%= project.image %> alt=<%= project.image %>></a>
+              </div>
+            <% }) %>
+          </div>
+        
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#projects" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#projects" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>  
+      </div>
+    </div>    
+    <% include footer %>
 </body>
 </html>
