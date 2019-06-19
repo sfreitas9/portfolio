@@ -6,6 +6,7 @@ const sgMail = require('@sendgrid/mail');
 require('dotenv').config();
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
+const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.use(morgan('dev'));
@@ -73,6 +74,6 @@ app.get('*', (req, res) => {
   res.status(404).send("something went wrong");
 });
 
-app.listen(8080, console.log('server is listening at http://localhost:8080'));
+app.listen(PORT, console.log(`server is listening at http://localhost:${PORT}`));
 
 module.exports = app;
