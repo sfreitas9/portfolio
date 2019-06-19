@@ -5,7 +5,6 @@ const profile = require('./profile');
 const sgMail = require('@sendgrid/mail');
 require('dotenv').config();
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-console.log("API key", process.env.SENDGRID_API_KEY);
 
 const app = express();
 
@@ -17,7 +16,7 @@ app.use(express.static('public'));
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
-//define the route that will use my custom route
+//Not using this - it defines a custom route
 //app.use('/profile', profile);
 
 app.get('/', (req, res) => {
@@ -70,4 +69,10 @@ app.post('/thanks', (req, res) => {
   res.render('thanks', { person : req.body });
 });
 
+app.get('*', (req, res) => {
+  res.status(404).send("something went wrong");
+});
+
 app.listen(8080, console.log('server is listening at http://localhost:8080'));
+
+module.exports = app;
